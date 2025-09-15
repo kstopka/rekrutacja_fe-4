@@ -24,7 +24,7 @@ const AppProvider: React.FC<AppProviderProps> = ({
 
   useEffect(() => {
     const appCtx = localStorage.getItem("AppCtx");
-    const API_URL = process.env.REACT_APP_API_URL;
+    const API_URL = process.env.REACT_APP_API_URL || "http://localhost:3000";
 
     if (!appCtx) {
       fetch(`${API_URL}/example_data.json`)
